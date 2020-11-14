@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class VarTypeSample {
 
@@ -55,10 +56,76 @@ public class VarTypeSample {
 		b4=(i<=k);
 		b5=b3||b4;
 		
-		System.out.print((b1&&b2)+","+(b1||b2)+","+!(b1||(b1 && b2))+","+b5);
+		System.out.println((b1&&b2)+","+(b1||b2)+","+!(b1||(b1 && b2))+","+b5);
+		
+		int[] iAr= {1,5,8,4,7,6};
+		for (i=0;i<iAr.length;i++) {
+			System.out.print(iAr[i]+" ");
+		}
+		System.out.println();
+		int n=100;
+		int[] iAr2=new int[n];
+		
+		for (i=0;i<iAr2.length;i++) {
+			iAr2[i]='A'+i%26;
+		}
+		for (i=0;i<iAr2.length;i++) {
+			System.out.print((char)iAr2[i]);
+		}
+		System.out.println();
+		
+		String s1="I am a student.";
+		String s2="You are also a student.";
+		System.out.println(s1+s2);
+		System.out.println("size of s1 is "+s1.length());
+		for (i=0;i<s1.length();i++) {
+			System.out.print(s1.charAt(i)+",");
+		}
+		System.out.println();
+		
+		String[] sAr=s2.split(" ");
+		for (i=0;i<sAr.length;i++) {
+			System.out.print(sAr[i]+"|");
+		}
+		System.out.println();
 		
 		
+		String s3=s1+s2;
+		int idx1=s3.indexOf("student");
+		int idx2=s3.lastIndexOf("student");
+		System.out.println("The first 'student' is from index "+idx1+". The last index of 'student' is from index "+idx2+".");
 		
+		
+		ArrayList<String> al=new ArrayList<>();
+		for (i=0;i<sAr.length;i++) {
+			al.add(sAr[i]);
+		}
+		System.out.println(al);
+		
+		String[] sAr2=s1.split(" ");
+		for (i=0;i<sAr2.length;i++) {
+			al.add(i,sAr2[i]);
+		}
+		System.out.println(al);
+		for (i=0;i<sAr2.length;i++) {
+			al.add(0,sAr2[i]);
+		}
+		System.out.println(al);
+		
+		ArrayList<String> al2=new ArrayList<>();
+		for (i=0;i<al.size();i++) {
+			if (!al2.contains(al.get(i))) {
+				al2.add(al.get(i));
+			}
+		}
+		System.out.println(al2);
+		
+		al2.remove("student.");
+		System.out.println(al2);
+		
+		al2.remove(3);
+		System.out.println(al2);
+
 	}
 
 }
